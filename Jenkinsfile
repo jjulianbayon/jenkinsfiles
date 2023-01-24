@@ -6,10 +6,11 @@ stages {
         script {
           //begin common code 
           if (fileExists()) {
-            def readcounter =    readFile(file: 'version.txt')
-            readcounter = readcounter.toInteger() +1
-            def version= "Version" + readcounter
-            println(version)
+            def getversion = readFile(file: 'version.txt')
+            println (getversion)
+
+            //def version= "Version" + readcounter
+            //println(version)
             //bat 'mvn package -Dartifactversion=' + "${version}"
             //writeFile(file: 'version.txt',    text:readcounter.toString())
           } //if condition
